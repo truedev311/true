@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Load HTML on Click</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+
+      .button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      #content-area {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="button" onclick="loadContent()">
+      Click to Load Content
+    </button>
+
+    <div id="content-area"></div>
+
+    <script>
+      function loadContent() {
+        const content = `
+        <h2>New HTML Loaded</h2>
+        <p>This content was added dynamically when the button was clicked.</p>
+      `;
+        const area = document.getElementById("content-area");
+        area.innerHTML = content;
+        area.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
